@@ -34,7 +34,7 @@ public class LeerArchivo {
             String line;
             while ((line = bf.readLine()) != null ){
                 jsonText += line + "/n";
-                System.out.println(line);
+                
                 
             }
             bf.close();

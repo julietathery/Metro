@@ -11,6 +11,7 @@ package metro;
 public class Nodo <T> {
     private T tInfo;
     private Nodo <T> pNextNodo;
+    private Nodo <T> pPrevious;
     
     
     //Constructor de la clase 
@@ -18,6 +19,7 @@ public class Nodo <T> {
     public Nodo(T tInfo) {
         this.tInfo = tInfo;
         this.pNextNodo = null;
+        this.pPrevious = null;
     }
     
     
@@ -35,15 +37,24 @@ public class Nodo <T> {
     
     
 
-    public Nodo<T> getpNextNodo() {
+    public Nodo<T> getNext() {
         return pNextNodo;
     }
     
     
 
-    public void setpNextNodo(Nodo<T> pNextNodo) {
+    public void setNext(Nodo<T> pNextNodo) {
         this.pNextNodo = pNextNodo;
     }
+
+    public Nodo<T> getPrev() {
+        return pPrevious;
+    }
+
+    public void setPrev(Nodo<T> pPrevious) {
+        this.pPrevious = pPrevious;
+    }
+    
     
     
 }

@@ -29,12 +29,12 @@ public class Metro {
         
         String infoGrafo1 = readFile.leerCaracasJson("./src/metro/CaracasJSON.json");
         String infoGrafo2 = readFile.leerBogotaJson("./src/metro/BogotaJSON.json");
-        String [] stopsCcs = editFile.getParadas(infoGrafo1);
-        String [] stopsBog = editFile.getParadas(infoGrafo2);
-        grafoCcs = grafoFunciones.crearGrafo(stopsCcs);
-        grafoBog = grafoFunciones.crearGrafo(stopsBog);
+        ListaParadas stopsCcs = editFile.getParadas(infoGrafo1);
+        ListaParadas stopsBog = editFile.getParadas(infoGrafo2);
+        grafoCcs = grafoFunciones.crearGrafoCcs(stopsCcs);
+        grafoBog = grafoFunciones.crearGrafoBog(stopsBog);
         
-        
+        grafoFunciones.drawGraph(grafoCcs);
         
     }
 }       

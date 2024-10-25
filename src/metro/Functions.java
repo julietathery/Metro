@@ -41,29 +41,63 @@ public class Functions {
         return documento; 
     }
     
-    public String[] getParadas (String content){
+    public ListaParadas getParadas (String content){
+        
         ListaParadas lista = new ListaParadas();
         String[] separar = content.split("Linea");
+        
+        
+        
         for (int i = 1; i < separar.length-1; i++) {
             String newString = separar[i].replaceAll("/n","");
             newString = newString.replaceAll(" ", "").replaceAll(String.valueOf('"'), "").replaceAll("\\{", "").replaceAll("\\}", "").replaceAll("\\[","").replaceAll("\\]","");
             String[] paradas = newString.split(",");
+
+            lista.insertLast(new NodoParadas(new Sucursal("OtraLinea")));
             for (int j = 0; j < paradas.length; j++) {
+                 if (paradas[j].contains(":")) {
+                    paradas[j] = paradas[j].split(":")[1].trim();
+                 }
                 lista.insertLast(new NodoParadas(new Sucursal(paradas[j])));
             }
         }
-        lista.printList();
-        String paradas = separar [0];
-        String[] stops = paradas.split("\n");
-        
-        return stops;
+       
+        return lista;
     }
     
+    
+    
+    public ListaParadas getOnlyParadasCcs (String content){
+        ListaParadas lista = new ListaParadas();
+        String[] separar = content.split("Linea");
+        
+        for (int i = 1; i < separar.length-1; i++) {
+            String newString = separar[i].replaceAll("/n","");
+            newString = newString.replaceAll(" ", "").replaceAll(String.valueOf('"'), "").replaceAll("\\{", "").replaceAll("\\}", "").replaceAll("\\[","").replaceAll("\\]","");
+            String[] paradas = newString.split(",");
+            
+            for (int j = 0; j < paradas.length; j++) {
+                lista.insertLast(new NodoParadas(new Sucursal(paradas[j])));
+                
+            }
+        }
+       
+        String paradas = separar [0];
+        
+        String[] stops = paradas.split("\n");
+     
+        return lista;
+    }
+    
+    
+    
+    
     public String[] getRelaciones (String content){
-        String[] separar = content.split("Relaciones");
+        String[] separar = content.split("Linea");
         String relaciones = separar[1];
         String[] relations = relaciones.split("\n");
         return relations;
+        
     }
     
 }

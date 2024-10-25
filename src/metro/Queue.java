@@ -9,6 +9,7 @@ package metro;
  * @author julietathery
  */
 public class Queue <T> {
+    
     private int length;
     private Nodo <T> front;
     private Nodo <T> back;
@@ -66,7 +67,7 @@ public class Queue <T> {
     
     
     public Nodo<T> next(Nodo<T> nodo) {
-        return nodo.getpNextNodo();
+       return nodo.getNext();
     }
    
     
@@ -88,7 +89,7 @@ public class Queue <T> {
         if (isEmpty()) {
             front = newNodo;
         } else {
-            back.setpNextNodo(newNodo);
+            back.setNext(newNodo);
         }
         back = newNodo;
         length++;

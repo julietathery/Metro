@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Grafo {
     private Vertice<NodoVertice> sucursalList;
+    private Vertice<NodoParadas> edges;
     private int Vmax; // numero maximo de vertices
     private int V; // numero de vertices
     private int A; // numero de aristas
@@ -26,11 +27,13 @@ public class Grafo {
     
     public Grafo() {
         this.sucursalList =  new Vertice<NodoVertice>();
+        this.edges = new Vertice<NodoParadas>();
         this.Vmax = 100;
         this.V = 0;
         this.A = 0;
     }
 
+    
    
    
     /**
@@ -44,33 +47,32 @@ public class Grafo {
     }
     
     
-    
+    /**
+     * Agrega la conexion entre los vertices
+     * @param parada1
+     * @param parada2 
+     */
     
      public void addEdge(Sucursal parada1, Sucursal parada2) {
-        NodoParadas stop1 = new NodoParadas (parada1);
-        NodoParadas stop2 = new NodoParadas (parada2);
-
-        //inserta al user1 en la lista de amigos del user2 y viceversa
-        if (sucursalList.checkParada(parada1) && sucursalList.checkParada(parada2)) {
-
-            for (int i = 0; i < sucursalList.getSize(); i++) {
-
-                if (sucursalList.getDato(i).getElement().equals(parada1)) {
-                    sucursalList.getDato(i).getStoplist().insertBegin(stop2);
-                }
-
-                if (sucursalList.getDato(i).getElement().equals(parada2)) {
-                    sucursalList.getDato(i).getStoplist().insertBegin(stop1);
-                }
-
-            }
-            A++;
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Error. Alguna de las paradas ingresadas no existe.");
-        }
-
-    }
+         if (!"".equals(parada1.getNameparada()) && "".equals(parada2.getNameparada())){
+             if(parada1.getNameparada().equals(parada2.getNameparada())){
+                 JOptionPane.showMessageDialog(null,( "No se puede conectar la estacion con ella misma"));
+                 
+             } else{
+                 Vertice vertice1 = this.getSucursalList();
+                 Vertice vertice2 = this.getSucursalList();
+                 
+                 if(vertice1 == null || vertice2 == null){
+                     JOptionPane.showMessageDialog(null,"Alguna de las estaciones no existe");
+                 }
+//               else{
+//                  grafoAux.addEdge(parada1.getNameparada()+ "-"+ parada2.getNameparada(), parada1.getNameparada(),parada2.getNameparada() );
+//                            
+//                 }
+                        
+             }            
+         }
+     }
 
   
     /**

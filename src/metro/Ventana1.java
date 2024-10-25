@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static metro.Metro.grafoBog;
 import org.graphstream.graph.Graph;
  
 
@@ -66,6 +67,11 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel1.add(showCaracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
 
         showBogota.setText("Metro Bogota");
+        showBogota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showBogotaActionPerformed(evt);
+            }
+        });
         jPanel1.add(showBogota, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
 
         addMetro.setText("Agregar nuevo archivo");
@@ -104,6 +110,11 @@ public class Ventana1 extends javax.swing.JFrame {
 //           JOptionPane.showMessageDialog(null, "Error adjuntando el archivo", "Importante", JOptionPane.INFORMATION_MESSAGE, windowMain.auxFunc.setJOptionPaneImage("/Users/beatrizcardozo/Desktop/PROYECTO/Proyecto-1/Proyecto-1/src/proyecto/pkg1/interfaces/images/alertIcon.png"));
 //        }
     }//GEN-LAST:event_addMetroActionPerformed
+
+    private void showBogotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBogotaActionPerformed
+        Graph dibujoGrafo = funcionesGrafo.drawGraph(grafoBog);
+        funcionesGrafo.viewGraph(dibujoGrafo);
+    }//GEN-LAST:event_showBogotaActionPerformed
 
     /**
      * @param args the command line arguments
