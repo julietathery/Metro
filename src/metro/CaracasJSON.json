@@ -9,12 +9,12 @@
             "Gato Negro",
             "Agua Salud",
             "Canno Amarillo",
-            "Capitolio",
+            {"Capitolio":"El Silencio"},
             "La Hoyada",
             "Parque Carabobo",
             "Bellas Artes",
             "Colegio de Ingenieros",
-            "Plaza Venezuela",
+            {"Plaza Venezuela":"Zona Rental"},
             "Sabana Grande",
             "Chacaito",
             "Chacao",
@@ -29,7 +29,7 @@
       },
       {
          "Linea 2":[
-            "Capitolio",
+             {"El Silencio":"Capitolio"},
             "Capuchinos",
             "Maternidad",
             "Artigas",
@@ -44,7 +44,7 @@
       },
       {
          "Linea 3":[
-            "Plaza Venezuela",
+            {"Plaza Venezuela":"Zona Rental"},
             "Ciudad Universitaria",
             "Los Simbolos",
             "La Bandera",
@@ -52,7 +52,7 @@
             "Los Jardines",
             "Coche",
             "Mercado",
-            "La Rinconada"
+             {"La Rinconada":"Caracas"}
          ]
       },
       {
@@ -69,7 +69,7 @@
             "Teatros",
             "Nuevo Circo",
             "Parque Central",
-            "Plaza Venezuela",
+            {"Zona Rental":"Plaza Venezuela"},
             "Bello Monte"
          ]
       }
