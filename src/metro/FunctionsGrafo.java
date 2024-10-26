@@ -98,16 +98,17 @@ public class FunctionsGrafo {
     Sucursal stopPrevia = null;  // Para manejar la parada anterior y crear las conexiones
     boolean nuevaLinea = true;  // Indicador de que comienza una nueva línea
     
+        
     for (int i = 0; i < stopsCcs.getSize(); i++) {
    
-        String nombreParadaActual = stopsCcs.getDato(i).getStop().getNameparada();
-        System.out.println(nombreParadaActual);
+        String nombreParadaActual = stopsCcs.getDato(i).getStop().getNameparada();  
+       
         
         // Verificar si es un marcador de cambio de línea
         if (nombreParadaActual.equalsIgnoreCase("OtraLinea")) {
              
             nuevaLinea = true;// Indicamos que estamos comenzando una nueva línea
-            //continue;  // Saltar esta iteración y seguir con la próxima parada
+            continue;  // Saltar esta iteración y seguir con la próxima parada
         }
         
         // Si no es "otraLínea", validamos si la parada actual ya está en el grafo
@@ -121,6 +122,7 @@ public class FunctionsGrafo {
                 if (nombreParadaActual.equals(nombreParadaGrafo)) {
                 verticeExiste = true;
                 nodoExistente = grafoAux.getSucursalList().getDato(k).getElement(); // Guardar la referencia del nodo existente
+                
                 }
             }
         }
@@ -132,20 +134,21 @@ public class FunctionsGrafo {
             Sucursal stopActual = new Sucursal(nombreParadaActual);
             grafoAux.addVertice(stopActual);
             nodoExistente = stopActual; 
+            
         }
         
         if (nuevaLinea) {
             if (nodoExistente != null && stopPrevia != null) {
-                
+                  
             // Conectar el último nodo de la línea anterior (stopPrevia) con el nodo actual
-                grafoAux.addEdge(stopPrevia, nodoExistente);
+                grafoAux.deleteEdge(stopPrevia, nodoExistente);
             }
         // Ya no es una nueva línea después de procesar la primera estación
         nuevaLinea = false;
         } else {
         // Crear el arco normal si no es el comienzo de una nueva línea
             if (stopPrevia != null) {
-                grafoAux.addEdge(stopPrevia, nodoExistente);  // Crear arco entre la parada anterior y la actual
+                grafoAux.deleteEdge(stopPrevia, nodoExistente);  // Crear arco entre la parada anterior y la actual
             }
         }
     
@@ -189,24 +192,27 @@ public class FunctionsGrafo {
         Graph graph = new MultiGraph("Paradas"); 
         System.setProperty("org.graphstream.ui", "swing");
         //graph.setAttribute("ui.stylesheet", "nodo {\n size:40px,30px;\n fill-color:#9EBCEF; \n text-mode: normal; \n}");
-        //System.out.println(grafo.getSucursalList().getSize());
+        
         for (int i=0;i<grafo.getSucursalList().getSize();i++){
             
             String stop = grafo.getSucursalList().getDato(i).getElement().getNameparada();
             graph.addNode(stop);
-            //System.out.println("stop" + stop);
+           
         }
         // Se recorre la lista de adyacencia de nuestro grafo para añadir los arcos y pesos al grafo de GraphStream
         for (int i=0; i < grafo.getSucursalList().getSize(); i++){
             String stop1 = grafo.getSucursalList().getDato(i).getElement().getNameparada();
-            //System.out.println(stop1);
+            
             NodoVertice<Sucursal> node1 = grafo.getSucursalList().getDato(i).getNext();
-            //System.out.println(node1.getElement().getNameparada());
-            //System.out.println(node1.getStoplist().getSize());
+            
               String stop2 = node1.getElement().getNameparada();
               org.graphstream.graph.Edge newEdge = graph.addEdge(stop1+ "-" + stop2, stop1, stop2);
+              
+              if (grafo.getSucursalList().getDato(i).getElement().getNameparada().equalsIgnoreCase("OtraLinea")){
+                  break;
+              }
       
-                //System.out.println(newEdge.getNode0());
+                
    
             }
      return graph;

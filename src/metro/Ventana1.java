@@ -52,6 +52,7 @@ public class Ventana1 extends javax.swing.JFrame {
         showCaracas = new javax.swing.JButton();
         showBogota = new javax.swing.JButton();
         addMetro = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,7 +65,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 showCaracasActionPerformed(evt);
             }
         });
-        jPanel1.add(showCaracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, -1));
+        jPanel1.add(showCaracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 200, 40));
 
         showBogota.setText("Metro Bogota");
         showBogota.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +73,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 showBogotaActionPerformed(evt);
             }
         });
-        jPanel1.add(showBogota, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
+        jPanel1.add(showBogota, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 170, 40));
 
         addMetro.setText("Agregar nuevo archivo");
         addMetro.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +81,11 @@ public class Ventana1 extends javax.swing.JFrame {
                 addMetroActionPerformed(evt);
             }
         });
-        jPanel1.add(addMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, -1, 20));
+        jPanel1.add(addMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 190, 40));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel1.setText("Escoja la ciudad donde desea colocar una sucursal");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 360));
 
@@ -88,9 +93,9 @@ public class Ventana1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showCaracasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showCaracasActionPerformed
-       
-        Graph dibujoGrafo = funcionesGrafo.drawGraph(grafoCcs);
-        funcionesGrafo.viewGraph(dibujoGrafo);
+      
+       Graph dibujoGrafo = funcionesGrafo.drawGraph(grafoCcs);
+       funcionesGrafo.viewGraph(dibujoGrafo);
         
     }//GEN-LAST:event_showCaracasActionPerformed
 
@@ -153,6 +158,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMetro;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton showBogota;
     private javax.swing.JButton showCaracas;

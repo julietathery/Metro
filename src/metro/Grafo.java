@@ -54,25 +54,52 @@ public class Grafo {
      */
     
      public void addEdge(Sucursal parada1, Sucursal parada2) {
-         if (!"".equals(parada1.getNameparada()) && "".equals(parada2.getNameparada())){
-             if(parada1.getNameparada().equals(parada2.getNameparada())){
-                 JOptionPane.showMessageDialog(null,( "No se puede conectar la estacion con ella misma"));
-                 
-             } else{
-                 Vertice vertice1 = this.getSucursalList();
-                 Vertice vertice2 = this.getSucursalList();
-                 
-                 if(vertice1 == null || vertice2 == null){
-                     JOptionPane.showMessageDialog(null,"Alguna de las estaciones no existe");
-                 }
-//               else{
-//                  grafoAux.addEdge(parada1.getNameparada()+ "-"+ parada2.getNameparada(), parada1.getNameparada(),parada2.getNameparada() );
-//                            
-//                 }
-                        
-             }            
-         }
+        
+        if (sucursalList.checkParada(parada1) && (sucursalList.checkParada(parada2))) {
+
+            for (int i = 0; i < sucursalList.getSize(); i++) {
+
+                if (sucursalList.getDato(i).getElement().equals(parada1)) {
+                    NodoParadas nodo1 = new NodoParadas(parada2);
+                    sucursalList.getDato(i).getStoplist().insertBegin(nodo1);
+                }
+
+                if (sucursalList.getDato(i).getElement().equals(parada2)) {
+                    NodoParadas nodo2 = new NodoParadas(parada1);
+                    sucursalList.getDato(i).getStoplist().insertBegin(nodo2);
+                }
+
+            }
+            A++;
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Error. Alguno de los usuarios ingresados no existe.");
+        }
+        
      }
+    
+    
+   
+//     public void addEdge(Sucursal parada1, Sucursal parada2) {
+//         if (!"".equals(parada1.getNameparada()) && "".equals(parada2.getNameparada())){
+//             if(parada1.getNameparada().equals(parada2.getNameparada())){
+//                 JOptionPane.showMessageDialog(null,( "No se puede conectar la estacion con ella misma"));
+//                 
+//             } else{
+//                 Vertice vertice1 = this.getSucursalList();
+//                 Vertice vertice2 = this.getSucursalList();
+//                 
+//                 if(vertice1 == null || vertice2 == null){
+//                     JOptionPane.showMessageDialog(null,"Alguna de las estaciones no existe");
+//                 }
+////               else{
+////                  grafoAux.addEdge(parada1.getNameparada()+ "-"+ parada2.getNameparada(), parada1.getNameparada(),parada2.getNameparada() );
+////                            
+////                 }
+//                        
+//             }            
+//         }
+//     }
 
   
     /**
@@ -117,8 +144,12 @@ public class Grafo {
        */
       
       
+      
+      
         public void deleteEdge(Sucursal parada1, Sucursal parada2) {
+           
         if (sucursalList.checkParada(parada1) && sucursalList.checkParada(parada2)) {
+            
 
             for (int i = 0; i < sucursalList.getSize(); i++) {
 
@@ -155,7 +186,7 @@ public class Grafo {
             }
             A--;
         } else {
-            JOptionPane.showMessageDialog(null, "Error. Alguno de los usuarios ingresados no existe.");
+            JOptionPane.showMessageDialog(null, "Error. Alguna de los usuarios ingresados no existe.");
         }
     }
         

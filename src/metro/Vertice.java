@@ -248,6 +248,10 @@ public class Vertice <T>{
     public void setSize(int size) {
         this.size = size;
     }
+
+    Object get(Vertice vertice1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
      
      

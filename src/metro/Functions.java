@@ -48,23 +48,75 @@ public class Functions {
         
         
         
-        for (int i = 1; i < separar.length-1; i++) {
+        for (int i = 1; i < separar.length; i++) {
             String newString = separar[i].replaceAll("/n","");
             newString = newString.replaceAll(" ", "").replaceAll(String.valueOf('"'), "").replaceAll("\\{", "").replaceAll("\\}", "").replaceAll("\\[","").replaceAll("\\]","");
             String[] paradas = newString.split(",");
 
+            
             lista.insertLast(new NodoParadas(new Sucursal("OtraLinea")));
             for (int j = 0; j < paradas.length; j++) {
                  if (paradas[j].contains(":")) {
-                    paradas[j] = paradas[j].split(":")[1].trim();
-                 }
+                    try{
+                     String[] probando = paradas[j].split(":");
+                     int prueba = Integer.parseInt(paradas[j].split(":")[0]);
+                     if (probando.length > 2){
+                         paradas[j] = paradas[j].split(":")[1].trim();
+                     } else{
+                         paradas[j] = paradas[j].split(":")[1].trim();
+                     }
+                     
+                    } catch (NumberFormatException e) {
+                      paradas[j] = paradas[j].split(":")[0].trim();
+                      }
+                    
+                      
+                    }
+                    
+                if (!checkParadasList (lista, paradas[j])){
                 lista.insertLast(new NodoParadas(new Sucursal(paradas[j])));
-            }
-        }
+            }}}
+        
        
         return lista;
     }
     
+    public boolean checkParadasList (ListaParadas lista, String elemento){
+        for (int i = 0; i < lista.getSize(); i++) {
+            if (lista.getDato(i).getStop().getNameparada().equals(elemento)){
+                return true; 
+            }
+        } return false;
+    }
+    
+    
+    
+    
+    
+//    public ListaParadas getParadas (String content){
+//        
+//        ListaParadas lista = new ListaParadas();
+//        String[] separar = content.split("Linea");
+//        
+//        
+//        
+//        for (int i = 1; i < separar.length-1; i++) {
+//            String newString = separar[i].replaceAll("/n","");
+//            newString = newString.replaceAll(" ", "").replaceAll(String.valueOf('"'), "").replaceAll("\\{", "").replaceAll("\\}", "").replaceAll("\\[","").replaceAll("\\]","");
+//            String[] paradas = newString.split(",");
+//
+//            lista.insertLast(new NodoParadas(new Sucursal("OtraLinea")));
+//            for (int j = 0; j < paradas.length; j++) {
+//                 if (paradas[j].contains(":")) {
+//                    paradas[j] = paradas[j].split(":")[1].trim();
+//                 }
+//                lista.insertLast(new NodoParadas(new Sucursal(paradas[j])));
+//            }
+//        }
+//       
+//        return lista;
+//    }
+//    
     
     
     public ListaParadas getOnlyParadasCcs (String content){
