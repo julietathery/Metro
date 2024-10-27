@@ -21,6 +21,7 @@ import org.graphstream.graph.Graph;
  */
 import static metro.Metro.grafoCcs;
 public class Ventana1 extends javax.swing.JFrame {
+    
     //JFileChooser seleccionar  = new JFileChooser;
     File archivo;
     FileInputStream entrada; 
@@ -35,6 +36,8 @@ public class Ventana1 extends javax.swing.JFrame {
      */
     public Ventana1() {
         initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
         
     }
     FunctionsGrafo funcionesGrafo = new FunctionsGrafo();
@@ -50,30 +53,54 @@ public class Ventana1 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         showCaracas = new javax.swing.JButton();
-        showBogota = new javax.swing.JButton();
         addMetro = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        showBogota = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        inputCcs = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        showCaracas1 = new javax.swing.JButton();
+        addMetro1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        showBogota1 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        showCaracas.setText("Metro Caracas ");
+        showCaracas.setText("Mostrar Metro Caracas ");
         showCaracas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showCaracasActionPerformed(evt);
             }
         });
-        jPanel1.add(showCaracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 200, 40));
-
-        showBogota.setText("Metro Bogota");
-        showBogota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showBogotaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(showBogota, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 170, 40));
+        jPanel1.add(showCaracas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 40));
 
         addMetro.setText("Agregar nuevo archivo");
         addMetro.addActionListener(new java.awt.event.ActionListener() {
@@ -81,19 +108,133 @@ public class Ventana1 extends javax.swing.JFrame {
                 addMetroActionPerformed(evt);
             }
         });
-        jPanel1.add(addMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 190, 40));
+        jPanel1.add(addMetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 210, 30));
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setText("Escoja la ciudad donde desea colocar una sucursal");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 360));
+        jButton1.setText("Agregar sucursal");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, -1, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 170, 60));
+
+        jLabel2.setText("Escriba la parada donde desea agregar una sucursal");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, -1, -1));
+
+        showBogota.setText("Mostrar Transmilenio Bogota");
+        showBogota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showBogotaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(showBogota, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 210, 40));
+
+        jLabel3.setText("Escriba la parada donde desea agregar una sucursal");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        inputCcs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputCcsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(inputCcs, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 60));
+
+        jButton2.setText("Agregar sucursal");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+
+        jLabel4.setText("Establesca un nuevo parametro de t ");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        jLabel5.setText("t = 10 (automatico)");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
+
+        jLabel6.setText("Establesca un nuevo parametro de t ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        jLabel7.setText("t = 3 (automatico)");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 220, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, -1));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        showCaracas1.setText("Mostrar Metro Caracas ");
+        showCaracas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showCaracas1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(showCaracas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, 40));
+
+        addMetro1.setText("Agregar nuevo archivo");
+        addMetro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMetro1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(addMetro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 210, 30));
+
+        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        jButton4.setText("Agregar sucursal");
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 180, -1, -1));
+        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 170, 60));
+
+        jLabel10.setText("Escriba la parada donde desea agregar una sucursal");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, -1, -1));
+
+        showBogota1.setText("Mostrar Transmilenio Bogota");
+        showBogota1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showBogota1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(showBogota1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 210, 40));
+
+        jLabel11.setText("Escriba la parada donde desea agregar una sucursal");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 60));
+
+        jButton5.setText("Agregar sucursal");
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+
+        jLabel12.setText("Establesca un nuevo parametro de t ");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        jLabel13.setText("t = 10 (automatico)");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
+
+        jLabel14.setText("Establesca un nuevo parametro de t ");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        jLabel15.setText("t = 3 (automatico)");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 220, -1));
+        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 220, -1));
+
+        jButton6.setText("Establecer t ");
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
+
+        jButton3.setText("Establecer t ");
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
+        jLabel8.setText("Bienvenido al sistema de lineas de transporte!");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 590));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void showCaracasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showCaracasActionPerformed
-      
+       
        Graph dibujoGrafo = funcionesGrafo.drawGraph(grafoCcs);
        funcionesGrafo.viewGraph(dibujoGrafo);
         
@@ -120,6 +261,28 @@ public class Ventana1 extends javax.swing.JFrame {
         Graph dibujoGrafo = funcionesGrafo.drawGraph(grafoBog);
         funcionesGrafo.viewGraph(dibujoGrafo);
     }//GEN-LAST:event_showBogotaActionPerformed
+
+    private void showCaracas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showCaracas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showCaracas1ActionPerformed
+
+    private void addMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMetro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addMetro1ActionPerformed
+
+    private void showBogota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBogota1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showBogota1ActionPerformed
+
+    private void inputCcsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCcsActionPerformed
+        String input = new String();
+        if (input.equalsIgnoreCase(input)){
+            //cambia el punto
+        }else{
+            JOptionPane.showMessageDialog(null, "La parada establecida no existe. Porfavor introdusca una de las paradas existentes");
+        }
+       
+    }//GEN-LAST:event_inputCcsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,9 +321,41 @@ public class Ventana1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMetro;
+    private javax.swing.JButton addMetro1;
+    private javax.swing.JTextField inputCcs;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JButton showBogota;
+    private javax.swing.JButton showBogota1;
     private javax.swing.JButton showCaracas;
+    private javax.swing.JButton showCaracas1;
     // End of variables declaration//GEN-END:variables
 }

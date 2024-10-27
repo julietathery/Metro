@@ -208,11 +208,6 @@ public class FunctionsGrafo {
               String stop2 = node1.getElement().getNameparada();
               org.graphstream.graph.Edge newEdge = graph.addEdge(stop1+ "-" + stop2, stop1, stop2);
               
-              if (grafo.getSucursalList().getDato(i).getElement().getNameparada().equalsIgnoreCase("OtraLinea")){
-                  break;
-              }
-      
-                
    
             }
      return graph;

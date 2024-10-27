@@ -142,14 +142,7 @@ public class Functions {
     }
     
     
+     
     
-    
-    public String[] getRelaciones (String content){
-        String[] separar = content.split("Linea");
-        String relaciones = separar[1];
-        String[] relations = relaciones.split("\n");
-        return relations;
-        
-    }
     
 }

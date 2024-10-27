@@ -4,22 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Grafo.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Ventana1.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Functions.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/FunctionsGrafo.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/NodoVertice.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/BogotaJSON.json</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/ListaParadas.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/LeerArchivo.java</file>
+            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Ventana2.java</file>
             <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/CaracasJSON.json</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/NodoParadas.java</file>
+            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Ventana1.java</file>
+            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Edge.java</file>
+            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/FunctionsGrafo.java</file>
+            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Functions.java</file>
             <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Metro.java</file>
             <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Nodo.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Sucursal.java</file>
             <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Startpage.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Vertice.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Queue.java</file>
-            <file>file:/Users/julietathery/Desktop/NetBeansProjects/Metro/src/metro/Stack.java</file>
         </group>
     </open-files>
 </project-private>
