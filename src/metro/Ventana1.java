@@ -41,6 +41,8 @@ public class Ventana1 extends javax.swing.JFrame {
         
     }
     FunctionsGrafo funcionesGrafo = new FunctionsGrafo();
+    Functions funciones = new Functions();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,7 +63,7 @@ public class Ventana1 extends javax.swing.JFrame {
         showBogota = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         inputCcs = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        addSucursal = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -138,8 +140,13 @@ public class Ventana1 extends javax.swing.JFrame {
         });
         jPanel1.add(inputCcs, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 170, 60));
 
-        jButton2.setText("Agregar sucursal");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+        addSucursal.setText("Agregar sucursal");
+        addSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addSucursalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(addSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
 
         jLabel4.setText("Establesca un nuevo parametro de t ");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
@@ -275,14 +282,15 @@ public class Ventana1 extends javax.swing.JFrame {
     }//GEN-LAST:event_showBogota1ActionPerformed
 
     private void inputCcsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCcsActionPerformed
-        String input = new String();
-        if (input.equalsIgnoreCase(input)){
-            //cambia el punto
-        }else{
-            JOptionPane.showMessageDialog(null, "La parada establecida no existe. Porfavor introdusca una de las paradas existentes");
-        }
+
+        
        
     }//GEN-LAST:event_inputCcsActionPerformed
+
+    private void addSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addSucursalActionPerformed
+        String input = new String();
+        funcionesGrafo.resaltarParada(input);
+    }//GEN-LAST:event_addSucursalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,9 +330,9 @@ public class Ventana1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMetro;
     private javax.swing.JButton addMetro1;
+    private javax.swing.JButton addSucursal;
     private javax.swing.JTextField inputCcs;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

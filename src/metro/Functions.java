@@ -7,6 +7,7 @@ package metro;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,6 +41,13 @@ public class Functions {
         }
         return documento; 
     }
+    
+    
+    /**
+     * Metodo que crea una lista con los nombres de las paradas 
+     * @param content
+     * @return 
+     */
     
     public ListaParadas getParadas (String content){
         
@@ -141,8 +149,5 @@ public class Functions {
         return lista;
     }
     
-    
-     
-    
-    
+  
 }

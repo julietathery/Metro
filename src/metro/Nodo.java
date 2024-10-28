@@ -54,6 +54,10 @@ public class Nodo <T> {
     public void setPrev(Nodo<T> pPrevious) {
         this.pPrevious = pPrevious;
     }
+
+    void setAttribute(String uistyle, String fillcolor_red) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     

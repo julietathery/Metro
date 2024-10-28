@@ -7,12 +7,15 @@ package metro;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
 import org.graphstream.ui.swing_viewer.SwingViewer;
 import org.graphstream.ui.swing_viewer.ViewPanel;
 import org.graphstream.ui.view.Viewer;
+import org.graphstream.graph.Node;
+import org.graphstream.graph.implementations.SingleGraph;
 
 
 /**
@@ -213,7 +216,34 @@ public class FunctionsGrafo {
      return graph;
     }
      
-     
-     
+    
+    public void resaltarParada(String nombreParada) {
+        // Buscar la parada en la lista de paradas
+        Graph graph = new SingleGraph("Sucursales"); 
+        Sucursal paradaEncontrada;
+        System.out.println(grafoAux);
+        for (int i = 0; i < stopsCcs.getSize(); i++) {
+            Sucursal parada = grafoAux.getSucursalList().getDato(i).getElement(); //ERROR
+            
+            if (parada.getNameparada().equalsIgnoreCase(nombreParada)) {
+                System.out.println("ahi voy");
+                paradaEncontrada = parada;
+                //graph.addNode(nombreParada);
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "Parada no encontrada en el grafo.");
+                return;
+            }
+        }
+
+        // Cambiar el color del nodo correspondiente en GraphStream
+        Node nodo = graph.getNode(nombreParada);
+        if (nodo != null) {
+            nodo.setAttribute("ui.style", "fill-color: red;"); // Cambia el color a rojo (o cualquier color deseado)
+            JOptionPane.showMessageDialog(null, "Parada " + nombreParada + " resaltada en el grafo.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al intentar resaltar el nodo en el grafo.");
+        } 
+    }
     
 }
